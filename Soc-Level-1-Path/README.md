@@ -20,8 +20,10 @@ applies in a real SOC. No room answers or flags are posted here.
 
 | # | Module | Status | Notes |
 |---|--------|--------|-------|
-| 01 | Blue Team Introduction | 🔄 | [Notes](01-blue-team-introduction.md) |
-| 02 | 
+| 01 | Blue Team Introduction | ✅ | [Notes](01-blue-team-introduction.md) |
+| 02 | SOC Team Internals     | ✅ | [Notes](02-SOC-Team-Internals.md)     |
+| 03 | Core SOC Solutions     | 🔄 | 
+
 
 ✅ Complete | 🔄 In progress | ⬜ Not started
 
