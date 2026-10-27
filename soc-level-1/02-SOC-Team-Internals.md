@@ -1,8 +1,13 @@
 ## SOC Team Internals: SOC Level 1
 
-**Platform:** TryHackMe | **In Progress:** 
+**Platform:** TryHackMe | **Completed** 
 
 ## Key Skills
+- Alert prioritization and triage
+- True positive vs. false positive assessment
+- Writing structured alert reports (5 W's) and escalating to the right person
+- Using SOC workbooks and lookup resources (identity inventory, asset inventory, network diagrams) to enrich alerts
+- Understanding SOC performance metrics (MTTD, MTTA, MTTR)
 
 ---
 
@@ -22,7 +27,7 @@
 - **What I did:** Triaged three alerts in priority order, from critical to high to low. For each one I read the alert details, [checked the context: user, host, source, and whether the activity fit normal behavior], and decided whether it was a real or potential threat or a false positive.
 - **Takeaway:** [One specific lesson, e.g., "Severity alone doesn't decide the outcome: a low-severity alert can be a true positive, and a critical one can turn out benign once context is checked."] Good triage depends on reading the evidence in each alert and justifying the decision to escalate or close.
 
-![SIEM alert queue showing severity, status, verdict, and assignee columns](../assets/tryhackme-siem-dashboard.png)
+![SIEM alert queue showing severity, status, verdict, and assignee columns](../assets/Tryhackme-SIEM-Dashboard.png)
 *TryHackMe SIEM alert queue before triage.*
 
 **SOC application:** This mirrors an L1 analyst's core daily task: working an alert queue by priority and making a documented escalate-or-close decision on each one.
@@ -86,23 +91,30 @@
 
 ---
 
-## SOC Metrics and Objectives 
+## SOC Metrics and Objectives
 
-**Summary:** [1-2 sentences]
+**Summary:** Covered the core metrics SOCs use to measure how quickly they detect, pick up, and respond to threats, and why faster times reduce the damage an attacker can do.
 
 **Key concepts**
-- **Term:** short definition in my own words
+- **Mean time to detect (MTTD):** The average time between when malicious activity starts and when the SOC detects it. A lower MTTD means the attacker has less time to operate unnoticed.
+- **Mean time to acknowledge (MTTA):** The average time between an alert firing and an analyst acknowledging it and starting work. It reflects queue management, staffing, and how well alerts are prioritized.
+- **Mean time to respond (MTTR):** The average time from detection to responding to the incident (containing or resolving it). Some teams define the "R" as "resolve" or "recover," so the exact start and end points vary by organization.
 
-**Tools used:** [e.g., Splunk, Wireshark]
+**How the metrics fit together**
+1. Malicious activity begins
+2. Detected by the SIEM or an analyst (**MTTD** measures this gap)
+3. Alert acknowledged by an analyst (**MTTA** measures this gap)
+4. Incident contained or resolved (**MTTR** measures this gap)
 
-**Lab: [Lab name]**
-- **Scenario:** [what the situation was]
-- **What I did:** [steps and tools]
-- **Takeaway:** [what I concluded]
+**Why they matter**
+- Lower times mean less attacker dwell time and less damage
+- Trends show where the process is slow: detection coverage (MTTD), alert handling (MTTA), or the response process (MTTR)
+- Averages can hide outliers, so teams usually review them alongside individual high-severity incidents
 
-![Descriptive alt text](../assets/filename.png)
-*Caption.*
+**SOC objectives:** [Add 2-3 objectives from the module in your own words, e.g., what the SOC is trying to achieve beyond the metrics.]
 
-**SOC application:** [how this shows up on the job]
+**Takeaway:** [One lesson in your own words, e.g., "As an L1 analyst, I directly affect MTTA by picking up alerts quickly and MTTR by escalating with clear, complete information."]
+
+**SOC application:** Managers track these numbers to judge whether the SOC is improving and where to invest in tools, training, or staffing. As an L1 analyst, working the queue by priority and escalating clearly feeds directly into MTTA and MTTR.
 
 ---

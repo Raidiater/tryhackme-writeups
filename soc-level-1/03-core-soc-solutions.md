@@ -1,1 +1,7 @@
-03-core-soc-solutions
+## Core SOC Solutions: SOC Level 1
+
+**Platform:** TryHackMe | **In Progress:** 
+
+## Key Skills
+
+---
